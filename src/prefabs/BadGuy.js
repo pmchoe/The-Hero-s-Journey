@@ -5,7 +5,7 @@ class BadGuy extends Phaser.GameObjects.Sprite {
 
         // THIS NEEDS TO BE RANDOMIZED BETWEEN ENEMY 9-12 SPRITES
         scene.add.existing(this);   // add to existing, displayList, updateList
-        this.moveSpeed = 3/* update to match accelerating background scroll*/;   // pixels per frame
+        this.moveSpeed = scrollSpeed // pixels per frame, matches background speed
     }
 
     update() {
@@ -15,14 +15,10 @@ class BadGuy extends Phaser.GameObjects.Sprite {
         // spawns next randomized enemy
         /* every.spawnTimer.amount.of.seconds or frames.new.enemy*/
 
-        // stops all enemy movement after defeating Hero
-        if(enemy.defeatHero == true) {
-            stop.allEnemy.movement
-        }
-
-        // removes enemy entity when hero defeats hero
-        /* if(enemy.isDefeated == true) {
-            remove.enemy
+        // removes all enemies after defeating Hero
+        /* if(defeatedHero == 2) {
+            stop all enemy movement (might be optional)
+            remove all enemy entities
         }
         */
     }

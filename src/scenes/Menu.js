@@ -4,7 +4,7 @@ class Menu extends Phaser.Scene {
     }
 
     create() {
-        this.add.text(20, 20, "The Hero's Journey Menu")
+        this.add.text(20, 20, "The Hero's Journey")
         this.scene.start("playScene");
     }
 }

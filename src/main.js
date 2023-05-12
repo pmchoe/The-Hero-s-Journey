@@ -9,3 +9,9 @@ let game = new Phaser.Game(config);
 
 // reserve keyboard vars
 let keyW, keyA, keyS, keyD;
+
+// reserve scrollSpeed
+let scrollSpeed;
+
+// reserve a check if enemy defeats hero
+let defeatedHero;

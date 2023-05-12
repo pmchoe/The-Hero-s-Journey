@@ -5,7 +5,7 @@ class BadGuy extends Phaser.GameObjects.Sprite {
 
         // THIS NEEDS TO BE RANDOMIZED BETWEEN ENEMY 9-12 SPRITES
         scene.add.existing(this);   // add to existing, displayList, updateList
-        this.moveSpeed = 8; // pixels per frame, matches background speed
+        this.moveSpeed = 8; // pixels per frame
     }
 
     update() {

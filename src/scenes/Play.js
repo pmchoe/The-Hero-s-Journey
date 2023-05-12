@@ -21,8 +21,9 @@ class Play extends Phaser.Scene {
         // add Hero
         this.player = new Hero(this, 300, 650, 'textureAtlas', 'textureAtlasSplit-0.png').setOrigin(1, 0.5);
         
-        // DELETE LATER, spawns ONE enemy
-        this.enemy = new BadGuy(this, 1180, 650, 'textureAtlas', 'textureAtlasSplit-9.png').setOrigin(0, 0.5);
+        // REPLACE LATER, spawns ONE enemy
+        // maybe not replace, but add while statement to keep spawning enemies
+        this.enemy = new BadGuy(this, 1280, 650, 'textureAtlas', 'textureAtlasSplit-9.png').setOrigin(0, 0.5);
 
         // unsure if this belongs here or in update()
         // add Enemies as long as Hero isnt dead

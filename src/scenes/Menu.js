@@ -13,7 +13,7 @@ class Menu extends Phaser.Scene {
 
     create() {
         // place tile sprite
-        this.background = this.add.image(0, 0, 1280, 960, 'background').setOrigin(0, 0); 
+        this.background = this.add.image(0, 0, 'background').setOrigin(0, 0); 
         
         // title text
         this.add.text(500, 860, "The Hero's Journey");

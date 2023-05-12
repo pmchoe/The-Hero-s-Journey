@@ -9,6 +9,9 @@ class BadGuy extends Phaser.GameObjects.Sprite {
     }
 
     update() {
+        // matches enemy speed with background speed 
+        this.moveSpeed = scrollSpeed;
+        
         // moves enemy left
         this.x -= this.moveSpeed;
 

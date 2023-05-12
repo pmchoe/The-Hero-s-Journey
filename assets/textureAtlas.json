@@ -1,0 +1,345 @@
+{
+	"textures": [
+		{
+			"image": "textureAtlas.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 463,
+				"h": 481
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "textureAtlasSplit-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 6,
+						"w": 152,
+						"h": 187
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 152,
+						"h": 187
+					},
+					"anchor": {
+						"x": 0.5625,
+						"y": 0.95
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 11,
+						"w": 153,
+						"h": 184
+					},
+					"frame": {
+						"x": 155,
+						"y": 1,
+						"w": 153,
+						"h": 184
+					},
+					"anchor": {
+						"x": 0.4166666666666667,
+						"y": 0.95
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 10,
+						"w": 152,
+						"h": 185
+					},
+					"frame": {
+						"x": 310,
+						"y": 1,
+						"w": 152,
+						"h": 185
+					},
+					"anchor": {
+						"x": 0.4739583333333333,
+						"y": 0.95
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 5,
+						"w": 156,
+						"h": 174
+					},
+					"frame": {
+						"x": 1,
+						"y": 190,
+						"w": 156,
+						"h": 174
+					},
+					"anchor": {
+						"x": 0.5052083333333334,
+						"y": 0.95
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 8,
+						"w": 114,
+						"h": 114
+					},
+					"frame": {
+						"x": 1,
+						"y": 366,
+						"w": 114,
+						"h": 114
+					},
+					"anchor": {
+						"x": 0.4375,
+						"y": 0.325
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 8,
+						"w": 114,
+						"h": 114
+					},
+					"frame": {
+						"x": 117,
+						"y": 366,
+						"w": 114,
+						"h": 114
+					},
+					"anchor": {
+						"x": 0.5260416666666666,
+						"y": 0.325
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 3,
+						"w": 116,
+						"h": 115
+					},
+					"frame": {
+						"x": 159,
+						"y": 187,
+						"w": 116,
+						"h": 115
+					},
+					"anchor": {
+						"x": 0.3854166666666667,
+						"y": 0.295
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 11,
+						"w": 153,
+						"h": 170
+					},
+					"frame": {
+						"x": 277,
+						"y": 188,
+						"w": 153,
+						"h": 170
+					},
+					"anchor": {
+						"x": 0.4322916666666667,
+						"y": 0.95
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 4,
+						"w": 114,
+						"h": 115
+					},
+					"frame": {
+						"x": 233,
+						"y": 360,
+						"w": 114,
+						"h": 115
+					},
+					"anchor": {
+						"x": 0.4166666666666667,
+						"y": 0.325
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 40,
+						"w": 50,
+						"h": 50
+					},
+					"frame": {
+						"x": 159,
+						"y": 304,
+						"w": 50,
+						"h": 50
+					},
+					"anchor": {
+						"x": 0.4635416666666667,
+						"y": 0.325
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 40,
+						"w": 50,
+						"h": 50
+					},
+					"frame": {
+						"x": 349,
+						"y": 360,
+						"w": 50,
+						"h": 50
+					},
+					"anchor": {
+						"x": 0.453125,
+						"y": 0.35
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 73,
+						"y": 39,
+						"w": 50,
+						"h": 50
+					},
+					"frame": {
+						"x": 211,
+						"y": 304,
+						"w": 50,
+						"h": 50
+					},
+					"anchor": {
+						"x": 0.5104166666666666,
+						"y": 0.315
+					}
+				},
+				{
+					"filename": "textureAtlasSplit-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 192,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 79,
+						"y": 39,
+						"w": 50,
+						"h": 50
+					},
+					"frame": {
+						"x": 349,
+						"y": 412,
+						"w": 50,
+						"h": 50
+					},
+					"anchor": {
+						"x": 0.5416666666666666,
+						"y": 0.32
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b74f288a480e749283ab299d1bc294a1:bb64ea3fab8a99ae3b9746309f69bbe4:2b5604bc88faefd55ddac16e9bce1532$"
+	}
+}

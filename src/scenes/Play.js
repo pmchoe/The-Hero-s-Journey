@@ -19,7 +19,7 @@ class Play extends Phaser.Scene {
         this.background = this.add.tileSprite(0, 0, 1280, 960, 'background').setOrigin(0, 0); 
         
         // add Hero
-        this.player = new Hero(this, 500, 500, 'textureAtlas', 'textureAtlasSplit-0.png').setOrigin(1, 0.5);
+        this.player = new Hero(this, 250, 500, 'textureAtlas', 'textureAtlasSplit-0.png').setOrigin(1, 0.5);
         
         // DELETE LATER, spawns ONE enemy
         this.enemy = new BadGuy(this, game.config.width - 1000, 200, 'textureAtlas', 'textureAtlasSplit-9.png').setOrigin(0, 0.5);

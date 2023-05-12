@@ -19,8 +19,10 @@ class Play extends Phaser.Scene {
 
     create() {
         // place tile sprite
-        this.background = this.add.tileSprite(0, 0, 1280, 960, 'background').setOrigin(0, 0);
-        
-         
+        this.background = this.add.tileSprite(0, 0, 1280, 960, 'background').setOrigin(0, 0); 
+    }
+
+    update() {
+        this.background.tilePositionX -= 8;
     }
 }

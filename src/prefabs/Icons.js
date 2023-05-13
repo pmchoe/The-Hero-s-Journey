@@ -10,25 +10,15 @@ class Icons extends Phaser.GameObjects.Sprite {
         // highlights icon with W, A, S, D presses
         // also de-highlights any other button
         if(Phaser.Input.Keyboard.JustDown(keyW)) {
-            iconW.setAlpha(1);
-            iconA.setAlpha(0.3);
-            iconS.setAlpha(0.3);
-            iconD.setAlpha(0.3);
+            this.setAlpha(1);
         } else if(Phaser.Input.Keyboard.JustDown(keyA)) {
-            iconW.setAlpha(0.3);
-            iconA.setAlpha(1);
-            iconS.setAlpha(0.3);
-            iconD.setAlpha(0.3);
+            this.setAlpha(1);
         } else if(Phaser.Input.Keyboard.JustDown(keyS)) {
-            iconW.setAlpha(0.3);
-            iconA.setAlpha(0.3);
-            iconS.setAlpha(1);
-            iconD.setAlpha(0.3);
+            this.setAlpha(1);
         } else if(Phaser.Input.Keyboard.JustDown(keyW)) {
-            iconW.setAlpha(0.3);
-            iconA.setAlpha(0.3);
-            iconS.setAlpha(0.3);
-            iconD.setAlpha(1);
+            this.setAlpha(1);
+        } else {
+            this.setAlpha(0.3);
         }
     }
 }

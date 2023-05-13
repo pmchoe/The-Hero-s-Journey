@@ -23,7 +23,7 @@ class Menu extends Phaser.Scene {
 
         // adds icon in WASD fashion
         this.icon = new Icons(this, 300, 480, 'textureAtlas', 'textureAtlasSplit-5.png');
-        this.icon = new Icons(this, 250, 540, 'textureAtlas', 'textureAtlasSplit-6.png');
+        this.icon = new Icons(this, 250, 535, 'textureAtlas', 'textureAtlasSplit-6.png');
         this.icon = new Icons(this, 300, 530, 'textureAtlas', 'textureAtlasSplit-7.png');
         this.icon = new Icons(this, 350, 530, 'textureAtlas', 'textureAtlasSplit-8.png');
 

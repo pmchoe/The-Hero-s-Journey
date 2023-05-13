@@ -33,7 +33,7 @@ class Menu extends Phaser.Scene {
 
     update() {
         // Check for key presses and switch to play scene by pressing W, A, S, or D
-        if (Phaser.Input.Keyboard.JustDown(keyW) || Phaser.Input.Keyboard.JustDown(keyA)
+        if(Phaser.Input.Keyboard.JustDown(keyW) || Phaser.Input.Keyboard.JustDown(keyA)
         || Phaser.Input.Keyboard.JustDown(keyS) || Phaser.Input.Keyboard.JustDown(keyD)) {
             // Destroy objects and switch to play scene
             this.titleText.destroy();

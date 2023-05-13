@@ -43,6 +43,23 @@ class Play extends Phaser.Scene {
     }
 
     update() {
+        // changes color icon with W, A, S, D press
+        if(Phaser.Input.Keyboard.JustDown(keyW)) {
+            // make pink icon 100% opaque
+            /* const image = this.add.atlas(this, above players x, above players y, 'textureAtlas', 'textureAtlasSplit-5.png').setAlppha(0.5);
+            */
+            // make all other icons 35% opaque
+        } else if(Phaser.Input.Keyboard.JustDown(keyA)) {
+            // make orange tri 100% opaque
+            // make all other icons 35% opaque
+        } else if(Phaser.Input.Keyboard.JustDown(keyS)) {
+            // make purp square 100% opaque
+            // make all other icons 35% opaque
+        } else if(Phaser.Input.Keyboard.JustDown(keyW)) {
+            // make yellow poly 100% opaque
+            // make all other icons 35% opaque
+        }
+
         // transition from Play to Menu when player loses
         // and increases scroll speed if player defeats enemy
         /* if(player.collideWith.enemy && iconNum != enemyNum) {

@@ -18,7 +18,7 @@ class Play extends Phaser.Scene {
     create() {
         // starts play bgm
         this.music = this.sound.add('playBGM', {loop: true});
-        this.music.play({volume: 0.5});
+        this.music.play({volume: 0.35});
 
         // reset and credit text
         this.resetText = this.add.text (20, 20, "Press R to restart", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});
@@ -39,7 +39,7 @@ class Play extends Phaser.Scene {
             repeat: -1  // loops infinitely
         });
         this.player = new Hero(this, 300, 650, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
-        this.player.anims.play('hero_running', true);   // animates hero running
+        this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
         // enemy spawns at faster rates with faster speeds
         //this.spawnEnemy();
@@ -79,6 +79,13 @@ class Play extends Phaser.Scene {
             this.scene.start("creditScene");
         }
 
+        this.iconW.update();
+        this.iconA.update();
+        this.iconS.update();
+        this.iconD.update();
+        //this.enemy.update();
+        this.player.update();
+        
         // makes a lil sound on WASD key press
         if(Phaser.Input.Keyboard.JustDown(keyW) || Phaser.Input.Keyboard.JustDown(keyA)
         || Phaser.Input.Keyboard.JustDown(keyS) || Phaser.Input.Keyboard.JustDown(keyD)) {
@@ -87,27 +94,7 @@ class Play extends Phaser.Scene {
             selectSFX.play({volume: 0.5});
         }
 
-        // transition from Play to Menu when player loses
-        // and increases enemy speed if player defeats enemy
-        /* if(player.collideWith.enemy && iconNum != enemyNum) {
-          moveSpeed = 0;
-          this.hero.destroy();
-          this.allEnemies.destroy();
-          this.scene.start("menuScene");
-        } else if(player.collideWith.enemy ** iconNum == enemyNum) {
-            moveSpeed += 0.03;
-        }
-        */
-        // MAYBE add a 1 second delay after losing
-
         // scrolls background at 8 frames per second (i think)
         this.background.tilePositionX += 8;
-        
-        this.iconW.update();
-        this.iconA.update();
-        this.iconS.update();
-        this.iconD.update();
-        //this.enemy.update();
-        this.player.update();
       }      
 }

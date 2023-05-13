@@ -23,7 +23,7 @@ class Menu extends Phaser.Scene {
 
         // bgm for menu
         this.music = this.sound.add('menuBGM', {loop: true});
-        this.music.play({volume: 0.5});
+        this.music.play({volume: 0.35});
 
         // instructions text
         this.instructionsText = this.add.text(640, 480, "Press W, A, S, D", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);

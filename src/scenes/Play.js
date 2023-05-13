@@ -18,7 +18,7 @@ class Play extends Phaser.Scene {
     create() {
         // starts play bgm
         this.music = this.sound.add('playBGM', {loop: true});
-        this.music.play();
+        this.music.play({volume: 0.5});
 
         // reset and credit text
         this.resetText = this.add.text (20, 20, "Press R to restart", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});

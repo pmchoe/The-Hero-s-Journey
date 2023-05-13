@@ -24,7 +24,7 @@ class Credit extends Phaser.Scene {
         
         // bgm same as menu's
         this.music = this.sound.add('menuBGM', {loop: true});
-        this.music.play();
+        this.music.play({volume: 0.5});
     }
 
     update() {

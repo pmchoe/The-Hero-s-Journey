@@ -5,15 +5,11 @@ class BadGuy extends Phaser.GameObjects.Sprite {
 
         // THIS NEEDS TO BE RANDOMIZED BETWEEN ENEMY 9-12 SPRITES
         scene.add.existing(this);   // add to existing, displayList, updateList
-        this.moveSpeed = 8; // pixels per frame
     }
 
     update() {
-        // matches enemy speed with background speed 
-        this.moveSpeed = scrollSpeed;
-        
-        // moves enemy left
-        this.x -= this.moveSpeed;
+        // matches enemy speed with background speed
+        this.x -= scrollSpeed;
 
         // spawns next randomized enemy
         /* every.spawnTimer.amount.of.seconds or frames.new.enemy*/

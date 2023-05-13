@@ -32,47 +32,34 @@ class Play extends Phaser.Scene {
         }
         */
 
+        // define scroll speed of background
+        scrollSpeed = 8;
+
         // define keys
         keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-    
-        // define initial scroll speed
-        scrollSpeed = 8;
-
-        // define defeatedHero at 1 
-        // (0 means game is on Menu, 1 is surviving, 2 is defeated)
-        defeatedHero = 1;
     }
 
     update() {
-        // accelerating background scroll and transition from Play to Menu
-        if (defeatedHero === 1) {
-          this.background.tilePositionX += scrollSpeed;
-          scrollSpeed += 0.05;
-        } else if (defeatedHero === 2) {
+        // transition from Play to Menu when player loses
+        // and increases scroll speed if player defeats enemy
+        /* if(player.collideWith.enemy && iconNum != enemyNum) {
           scrollSpeed = 0;
           this.scene.stop("playScene");
-          this.scene.start("menuScene");
+          this.scene.start("MenuScene");
+        } else if(player.collideWith.enemy ** iconNum == enemyNum) {
+            scrollSpeed += 0.03;
         }
-      
-        // DELETE LATER fixed speed at 8
-        this.background.tilePositionX += scrollSpeed;
-      
-        // checks if enemy defeats Hero
-        /* if((enemy.originpoint? == player.originpoint?) && iconType != enemyType) {
-          enemy.defeatsHero = 2;
-        } 
         */
+        // MAYBE add a 1 second delay after losing
+
+
+        // scrolls background 
+        this.background.tilePositionX += scrollSpeed;
       
         this.enemy.update();
         this.player.update();
-      
-        // stops background scroll when lose
-        /* if(enemy.defeatsHero == true) {
-          scrollSpeed = 0;
-        }
-        */
       }      
 }

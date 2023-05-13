@@ -14,7 +14,7 @@ class Credit extends Phaser.Scene {
         this.background = this.add.image(0, 0, 'background').setOrigin(0, 0); 
     
         // credits "text" image
-        this.credits = this.add.image(0, 0, 'credits'); 
+        this.credits = this.add.image(0, 0, 'credits').setOrigin(0, 0); 
 
         // reset text
         this.resetText = this.add.text(20, 20, "Press R to restart", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});

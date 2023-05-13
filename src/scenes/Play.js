@@ -66,7 +66,7 @@ class Play extends Phaser.Scene {
         // scrolls background 
         this.background.tilePositionX += scrollSpeed;
         
-        this.icon.update()
+        // this.icon.update()
         this.enemy.update();
         this.player.update();
       }      

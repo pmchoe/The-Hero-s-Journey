@@ -50,7 +50,7 @@ class Play extends Phaser.Scene {
         // accelerating background scroll and transition from Play to Menu
         if (defeatedHero === 1) {
           this.background.tilePositionX += scrollSpeed;
-          scrollSpeed += 0.5;
+          scrollSpeed += 0.05;
         } else if (defeatedHero === 2) {
           scrollSpeed = 0;
           this.scene.stop("playScene");

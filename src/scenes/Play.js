@@ -18,9 +18,16 @@ class Play extends Phaser.Scene {
         // place tile sprite
         this.background = this.add.tileSprite(0, 0, 1280, 960, 'background').setOrigin(0, 0); 
         
-        // add Hero
+        // adds Hero
         this.player = new Hero(this, 300, 650, 'textureAtlas', 'textureAtlasSplit-0.png').setOrigin(1, 0.5);
         
+        // adds icon in WASD fashion, again (after removing them from menu)
+        /*this.icon = new Icons(this, 300, 450, 'textureAtlas', 'textureAtlasSplit-5.png');
+        this.icon = new Icons(this, 250, 550, 'textureAtlas', 'textureAtlasSplit-6.png');
+        this.icon = new Icons(this, 300, 550, 'textureAtlas', 'textureAtlasSplit-7.png');
+        this.icon = new Icons(this, 350, 550, 'textureAtlas', 'textureAtlasSplit-8.png');
+        */
+
         // REPLACE LATER, spawns ONE enemy
         // maybe not replace, but add while statement to keep spawning enemies
         this.enemy = new BadGuy(this, 1280, 650, 'textureAtlas', 'textureAtlasSplit-9.png').setOrigin(0, 0.5);
@@ -43,23 +50,6 @@ class Play extends Phaser.Scene {
     }
 
     update() {
-        // changes color icon with W, A, S, D press
-        if(Phaser.Input.Keyboard.JustDown(keyW)) {
-            // make pink icon 100% opaque
-            /* const image = this.add.atlas(this, above players x, above players y, 'textureAtlas', 'textureAtlasSplit-5.png').setAlppha(0.5);
-            */
-            // make all other icons 35% opaque
-        } else if(Phaser.Input.Keyboard.JustDown(keyA)) {
-            // make orange tri 100% opaque
-            // make all other icons 35% opaque
-        } else if(Phaser.Input.Keyboard.JustDown(keyS)) {
-            // make purp square 100% opaque
-            // make all other icons 35% opaque
-        } else if(Phaser.Input.Keyboard.JustDown(keyW)) {
-            // make yellow poly 100% opaque
-            // make all other icons 35% opaque
-        }
-
         // transition from Play to Menu when player loses
         // and increases scroll speed if player defeats enemy
         /* if(player.collideWith.enemy && iconNum != enemyNum) {
@@ -75,7 +65,8 @@ class Play extends Phaser.Scene {
 
         // scrolls background 
         this.background.tilePositionX += scrollSpeed;
-      
+        
+        this.icon.update()
         this.enemy.update();
         this.player.update();
       }      

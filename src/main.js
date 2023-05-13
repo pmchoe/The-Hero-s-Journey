@@ -12,6 +12,3 @@ let keyW, keyA, keyS, keyD;
 
 // reserve scrollSpeed
 let scrollSpeed;
-
-// reserve a check if enemy defeats hero
-let defeatedHero;

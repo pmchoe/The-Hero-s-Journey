@@ -16,7 +16,10 @@ class Menu extends Phaser.Scene {
         this.background = this.add.image(0, 0, 'background').setOrigin(0, 0); 
         
         // title text
-        this.add.text(640, 480, "The Hero's Journey", {fontFamily: 'Arial', fontSize: '74px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
+        this.add.text(640, 380, "Match the Colors", {fontFamily: 'Arial', fontSize: '74px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
+
+        // instructions text
+        this.add.text(640, 480, "Press WASD", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
 
         // spawns static hero
         this.player = new Hero(this, 300, 650, 'textureAtlas', 'textureAtlasSplit-0.png').setOrigin(1, 0.5);

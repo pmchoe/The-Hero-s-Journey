@@ -22,10 +22,10 @@ class Menu extends Phaser.Scene {
         this.instructionsText = this.add.text(640, 480, "Press W, A, S, D", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
 
         // adds icon in WASD fashion
-        this.icon = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png');
-        this.icon = new Icons(this, 135, 525, 'textureAtlas', 'textureAtlasSplit-6.png');
-        this.icon = new Icons(this, 185, 519, 'textureAtlas', 'textureAtlasSplit-7.png');
-        this.icon = new Icons(this, 235, 520, 'textureAtlas', 'textureAtlasSplit-8.png');
+        this.iconW = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png');
+        this.iconA = new Icons(this, 135, 525, 'textureAtlas', 'textureAtlasSplit-6.png');
+        this.iconS = new Icons(this, 185, 519, 'textureAtlas', 'textureAtlasSplit-7.png');
+        this.iconD = new Icons(this, 235, 520, 'textureAtlas', 'textureAtlasSplit-8.png');
 
         // spawns static hero
         this.player = new Hero(this, 300, 650, 'textureAtlas', 'textureAtlasSplit-0.png').setOrigin(1, 0.5);
@@ -45,12 +45,10 @@ class Menu extends Phaser.Scene {
             this.titleText.destroy();
             this.instructionsText.destroy();
             this.player.destroy();
-            this.icon.destroy();
-            /* this.iconW.destroy();
+            this.iconW.destroy();
             this.iconA.destroy();
             this.iconS.destroy();
             this.iconD.destroy();
-            */
             this.scene.start("playScene");
         }
     }

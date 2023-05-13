@@ -22,11 +22,10 @@ class Play extends Phaser.Scene {
         this.player = new Hero(this, 300, 650, 'textureAtlas', 'textureAtlasSplit-0.png').setOrigin(1, 0.5);
         
         // adds icon in WASD fashion, again (after removing them from menu)
-        /* this.iconW = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png');
-        this.iconA = new Icons(this, 135, 525, 'textureAtlas', 'textureAtlasSplit-6.png');
-        this.iconS = new Icons(this, 185, 519, 'textureAtlas', 'textureAtlasSplit-7.png');
-        this.iconD = new Icons(this, 235, 520, 'textureAtlas', 'textureAtlasSplit-8.png');
-        */
+        this.iconW = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png').setAlpha(0.3);
+        this.iconA = new Icons(this, 135, 525, 'textureAtlas', 'textureAtlasSplit-6.png').setAlpha(0.3);
+        this.iconS = new Icons(this, 185, 519, 'textureAtlas', 'textureAtlasSplit-7.png').setAlpha(0.3);
+        this.iconD = new Icons(this, 235, 520, 'textureAtlas', 'textureAtlasSplit-8.png').setAlpha(0.3);
 
         // REPLACE LATER, spawns ONE enemy
         // maybe not replace, but add while statement to keep spawning enemies

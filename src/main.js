@@ -10,5 +10,8 @@ let game = new Phaser.Game(config);
 // reserve keyboard vars
 let keyW, keyA, keyS, keyD;
 
+// reserve icon vars
+let iconW, iconA, iconS, iconD;
+
 // reserve scrollSpeed
 let scrollSpeed;

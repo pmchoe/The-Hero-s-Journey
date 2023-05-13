@@ -8,20 +8,27 @@ class Icons extends Phaser.GameObjects.Sprite {
 
     update() {
         // highlights icon with W, A, S, D presses
+        // also de-highlights any other button
         if(Phaser.Input.Keyboard.JustDown(keyW)) {
-            // make pink icon 100% opaque
-            /* const image = this.add.atlas(this, above players x, above players y, 'textureAtlas', 'textureAtlasSplit-5.png').setAlppha(0.5);
-            */
-            // make all other icons 35% opaque
+            this.iconW.setAlpha(1);
+            this.iconA.setAlpha(0.3);
+            this.iconS.setAlpha(0.3);
+            this.iconD.setAlpha(0.3);
         } else if(Phaser.Input.Keyboard.JustDown(keyA)) {
-            // make orange tri 100% opaque
-            // make all other icons 35% opaque
+            this.iconW.setAlpha(0.3);
+            this.iconA.setAlpha(1);
+            this.iconS.setAlpha(0.3);
+            this.iconD.setAlpha(0.3);
         } else if(Phaser.Input.Keyboard.JustDown(keyS)) {
-            // make purp square 100% opaque
-            // make all other icons 35% opaque
+            this.iconW.setAlpha(0.3);
+            this.iconA.setAlpha(0.3);
+            this.iconS.setAlpha(1);
+            this.iconD.setAlpha(0.3);
         } else if(Phaser.Input.Keyboard.JustDown(keyW)) {
-            // make yellow poly 100% opaque
-            // make all other icons 35% opaque
+            this.iconW.setAlpha(0.3);
+            this.iconA.setAlpha(0.3);
+            this.iconS.setAlpha(0.3);
+            this.iconD.setAlpha(1);
         }
     }
 }

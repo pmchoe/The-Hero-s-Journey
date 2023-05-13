@@ -9,26 +9,11 @@ class Hero extends Phaser.GameObjects.Sprite {
     update() {
         // might not belong here, removes idle sprite and starts running animation
 
-
-        // changes player icon depending on W, A, S, D key pressed
-        /* if(Phaser.Input.Keyboard.JustDown(keyW)) {
-            change to textureAtlasSplit-5 (pink circle)
-        }
-        if(Phaser.Input.Keyboard.JustDown(keyA)) {
-            change to textureAtlasSplit-6 (orange triangle)
-        }
-        if(Phaser.Input.Keyboard.JustDown(keyS)) {
-            change to textureAtlasSplit-7 (purple square)
-        }
-        if(Phaser.Input.Keyboard.JustDown(keyD)) {
-            change to textureAtlasSplit-8 (yellow... polygon?)
-        }
-        */
-
-        // resets hero after dying to enemy
-        /* if(this.defeatsHero == true) {
-            this.HeroRunning.remove
-            this.Hero.goToIdle
+        // turns hero sprite 270 degrees when defeated
+        /* if(enemy.collidesWith.player && iconType != enemyType) {
+            remove.runningHeroAnimation
+            put png image textureAtlasSplit-0
+            flip it 270 degrees
         }
 
         // starts running animation after W, A, S, D is pressed
@@ -37,7 +22,6 @@ class Hero extends Phaser.GameObjects.Sprite {
         && this.scene.Menu == true) {
             remove this.HeroIdle
             start this.HeroRunning
-            this.scene.changeto.Play
         }
         */
     }

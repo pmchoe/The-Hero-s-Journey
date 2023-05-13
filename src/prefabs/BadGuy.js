@@ -3,22 +3,37 @@ class BadGuy extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
         super(scene, x, y, texture, frame);
 
-        // THIS NEEDS TO BE RANDOMIZED BETWEEN ENEMY 9-12 SPRITES
         scene.add.existing(this);   // add to existing, displayList, updateList
+        
+        this.moveSpeed = 7;         // initial enemy speed
+        this.spawnTimer = 0;        // timer until next spawn
+        this.spawnRate = 5000;      // starting spawn rate of 5 seconds
     }
 
-    update() {
-        // matches enemy speed with background speed
-        this.x -= scrollSpeed;
+    update(time, delta) {
+        // moves enemy to the left
+        this.x -= this.moveSpeed;
 
-        // spawns next randomized enemy
-        /* every.spawnTimer.amount.of.seconds or frames.new.enemy*/
+        // increases movement speed
+        this.moveSpeed += delta / 1000;
 
-        // removes all enemies after defeating Hero
-        /* if(defeatedHero == 2) {
-            stop all enemy movement (might be optional)
-            remove all enemy entities
+        // spawn enemy at the spawn rate interval
+        this.spawnTimer -= delta;
+        if (this.spawnTimer <= 0) {
+            // randomly chooses a number 1-4
+            let enemyType = Phaser.Math.Between(1, 4);
+
+            // spawn a new enemy
+            new BadGuy(this.scene, game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${enemyType}.png`).setOrigin(0, 0.5);
+            
+            // reduce the spawn rate by 100ms every time an enemy is spawned
+            this.spawnRate -= 100;
+
+            // increase the enemy move speed after every enemy spawn
+            this.moveSpeed += 3;
+
+            // updates enemy spawn timer to spawn rate
+            this.spawnTimer = this.spawnRate;
         }
-        */
     }
 }

@@ -13,5 +13,5 @@ let keyW, keyA, keyS, keyD;
 // reserve icon vars
 let iconW, iconA, iconS, iconD;
 
-// reserve scrollSpeed
-let scrollSpeed;
+// reserve enemy move speed
+let moveSpeed;

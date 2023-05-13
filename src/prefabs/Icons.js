@@ -7,6 +7,8 @@ class Icons extends Phaser.GameObjects.Sprite {
     }
 
     update() {
+        // When W key is pressed, iconW is "highlighted" while
+        // the others are made more transparent
         if(Phaser.Input.Keyboard.JustDown(keyW)) {
             this.scene.iconW.setAlpha(1);
             this.scene.iconA.setAlpha(0.4);

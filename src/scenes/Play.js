@@ -82,10 +82,46 @@ class Play extends Phaser.Scene {
         // scrolls background at 8 frames per second (i think)
         this.background.tilePositionX += 8;
         
-        this.iconW.update();
-        this.iconA.update();
-        this.iconS.update();
-        this.iconD.update();
+        // When W key is pressed, iconW is "highlighted" while
+        // the others are transparent when not selected
+        if(Phaser.Input.Keyboard.JustDown(keyW)) {
+            this.scene.iconW.setAlpha(1);
+            this.scene.iconA.setAlpha(0.4);
+            this.scene.iconS.setAlpha(0.4);
+            this.scene.iconD.setAlpha(0.4);
+
+            // make a lil sound
+            let selectSFX = this.sound.add('select');
+            selectSFX.play({volume: 0.5});
+        } else if(Phaser.Input.Keyboard.JustDown(keyA)) {
+            this.scene.iconW.setAlpha(0.4);
+            this.scene.iconA.setAlpha(1);
+            this.scene.iconS.setAlpha(0.4);
+            this.scene.iconD.setAlpha(0.4);
+
+            // make a lil sound
+            let selectSFX = this.sound.add('select');
+            selectSFX.play({volume: 0.5});
+        } else if(Phaser.Input.Keyboard.JustDown(keyS)) {
+            this.scene.iconW.setAlpha(0.4);
+            this.scene.iconA.setAlpha(0.4);
+            this.scene.iconS.setAlpha(1);
+            this.scene.iconD.setAlpha(0.4);
+
+            // make a lil sound
+            let selectSFX = this.sound.add('select');
+            selectSFX.play({volume: 0.5});
+        } else if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.scene.iconW.setAlpha(0.4);
+            this.scene.iconA.setAlpha(0.4);
+            this.scene.iconS.setAlpha(0.4);
+            this.scene.iconD.setAlpha(1);
+            
+            // make a lil sound
+            let selectSFX = this.sound.add('select');
+            selectSFX.play({volume: 0.5});
+        }
+        
         //this.enemy.update();
         this.player.update();
       }      

@@ -45,6 +45,12 @@ class Menu extends Phaser.Scene {
             this.titleText.destroy();
             this.instructionsText.destroy();
             this.player.destroy();
+            this.icon.destroy();
+            /* this.iconW.destroy();
+            this.iconA.destroy();
+            this.iconS.destroy();
+            this.iconD.destroy();
+            */
             this.scene.start("playScene");
         }
     }

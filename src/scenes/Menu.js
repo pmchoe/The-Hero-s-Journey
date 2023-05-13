@@ -30,20 +30,13 @@ class Menu extends Phaser.Scene {
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     
-        // when W, A, S, D pressed, switches scenes from Menu to Play 
-        // and destroys title, instructions, and idle hero sprite
-        if(Phaser.Input.Keyboard.JustDown(keyW) || Phaser.Input.Keyboard.JustDown(keyA)
+        // Check for key presses and switch to play scene by pressing W, A, S, or D
+        if (Phaser.Input.Keyboard.JustDown(keyW) || Phaser.Input.Keyboard.JustDown(keyA)
         || Phaser.Input.Keyboard.JustDown(keyS) || Phaser.Input.Keyboard.JustDown(keyD)) {
-            // destroy title text
-            titleText.destroy();
-
-            // destroy instructions text
-            instructionsText.destroy();
-
-            // destroy player sprite
+            // Destroy objects and switch to play scene
+            this.titleText.destroy();
+            this.instructionsText.destroy();
             this.player.destroy();
-
-            // switch to play scene
             this.scene.start("playScene");
         }
     }

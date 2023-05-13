@@ -47,29 +47,32 @@ class Play extends Phaser.Scene {
     }
 
     update() {
-        // accelerating background scroll
-        /* while(enemy.defeatsHero == false) {
-            this.background.tilePositionX += scrollSpeed;
-            scrollSpeed += 0.5
+        // accelerating background scroll and transition from Play to Menu
+        if (defeatedHero === 1) {
+          this.background.tilePositionX += scrollSpeed;
+          scrollSpeed += 0.5;
+        } else if (defeatedHero === 2) {
+          scrollSpeed = 0;
+          this.scene.stop("playScene");
+          this.scene.start("menuScene");
         }
-        */
-
+      
         // DELETE LATER fixed speed at 8
         this.background.tilePositionX += scrollSpeed;
-
+      
         // checks if enemy defeats Hero
         /* if((enemy.originpoint? == player.originpoint?) && iconType != enemyType) {
-            enemy.defeatsHero = 2;
+          enemy.defeatsHero = 2;
         } 
         */
-
+      
         this.enemy.update();
         this.player.update();
-
+      
         // stops background scroll when lose
         /* if(enemy.defeatsHero == true) {
-            scrollSpeed = 0;
+          scrollSpeed = 0;
         }
         */
-    }
+      }      
 }

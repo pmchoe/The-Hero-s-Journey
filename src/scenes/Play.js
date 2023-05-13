@@ -79,22 +79,14 @@ class Play extends Phaser.Scene {
             this.scene.start("creditScene");
         }
 
+        // scrolls background at 8 frames per second (i think)
+        this.background.tilePositionX += 8;
+        
         this.iconW.update();
         this.iconA.update();
         this.iconS.update();
         this.iconD.update();
         //this.enemy.update();
         this.player.update();
-        
-        // makes a lil sound on WASD key press
-        if(Phaser.Input.Keyboard.JustDown(keyW) || Phaser.Input.Keyboard.JustDown(keyA)
-        || Phaser.Input.Keyboard.JustDown(keyS) || Phaser.Input.Keyboard.JustDown(keyD)) {
-            // make a lil sound
-            let selectSFX = this.sound.add('select');
-            selectSFX.play({volume: 0.5});
-        }
-
-        // scrolls background at 8 frames per second (i think)
-        this.background.tilePositionX += 8;
       }      
 }

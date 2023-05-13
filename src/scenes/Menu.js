@@ -22,10 +22,10 @@ class Menu extends Phaser.Scene {
         this.instructionsText = this.add.text(640, 480, "Press W, A, S, D", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
 
         // adds icon in WASD fashion
-        this.icon = new Icons(this, 300, 490, 'textureAtlas', 'textureAtlasSplit-5.png');
+        this.icon = new Icons(this, 300, 480, 'textureAtlas', 'textureAtlasSplit-5.png');
         this.icon = new Icons(this, 250, 540, 'textureAtlas', 'textureAtlasSplit-6.png');
-        this.icon = new Icons(this, 300, 540, 'textureAtlas', 'textureAtlasSplit-7.png');
-        this.icon = new Icons(this, 350, 540, 'textureAtlas', 'textureAtlasSplit-8.png');
+        this.icon = new Icons(this, 300, 530, 'textureAtlas', 'textureAtlasSplit-7.png');
+        this.icon = new Icons(this, 350, 530, 'textureAtlas', 'textureAtlasSplit-8.png');
 
         // spawns static hero
         this.player = new Hero(this, 300, 650, 'textureAtlas', 'textureAtlasSplit-0.png').setOrigin(1, 0.5);

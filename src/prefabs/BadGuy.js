@@ -20,12 +20,6 @@ class BadGuy extends Phaser.GameObjects.Sprite {
         // spawn enemy at the spawn rate interval
         this.spawnTimer -= delta;
         if (this.spawnTimer <= 0) {
-            // randomly chooses a number 1-4
-            let enemyType = Phaser.Math.Between(1, 4);
-
-            // spawn a new enemy
-            new BadGuy(this.scene, game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${enemyType}.png`).setOrigin(0, 0.5);
-            
             // reduce the spawn rate by 100ms every time an enemy is spawned
             this.spawnRate -= 100;
 

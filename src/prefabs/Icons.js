@@ -9,23 +9,23 @@ class Icons extends Phaser.GameObjects.Sprite {
     update() {
         if(Phaser.Input.Keyboard.JustDown(keyW)) {
             this.scene.iconW.setAlpha(1);
-            this.scene.iconA.setAlpha(0.3);
-            this.scene.iconS.setAlpha(0.3);
-            this.scene.iconD.setAlpha(0.3);
+            this.scene.iconA.setAlpha(0.4);
+            this.scene.iconS.setAlpha(0.4);
+            this.scene.iconD.setAlpha(0.4);
         } else if(Phaser.Input.Keyboard.JustDown(keyA)) {
-            this.scene.iconW.setAlpha(0.3);
+            this.scene.iconW.setAlpha(0.4);
             this.scene.iconA.setAlpha(1);
-            this.scene.iconS.setAlpha(0.3);
-            this.scene.iconD.setAlpha(0.3);
+            this.scene.iconS.setAlpha(0.4);
+            this.scene.iconD.setAlpha(0.4);
         } else if(Phaser.Input.Keyboard.JustDown(keyS)) {
-            this.scene.iconW.setAlpha(0.3);
-            this.scene.iconA.setAlpha(0.3);
+            this.scene.iconW.setAlpha(0.4);
+            this.scene.iconA.setAlpha(0.4);
             this.scene.iconS.setAlpha(1);
-            this.scene.iconD.setAlpha(0.3);
+            this.scene.iconD.setAlpha(0.4);
         } else if(Phaser.Input.Keyboard.JustDown(keyD)) {
-            this.scene.iconW.setAlpha(0.3);
-            this.scene.iconA.setAlpha(0.3);
-            this.scene.iconS.setAlpha(0.3);
+            this.scene.iconW.setAlpha(0.4);
+            this.scene.iconA.setAlpha(0.4);
+            this.scene.iconS.setAlpha(0.4);
             this.scene.iconD.setAlpha(1);
         }
     }    

@@ -67,8 +67,11 @@ class Play extends Phaser.Scene {
     }
 
     spawnEnemy() {
+        //delete later, for debugging purposes
+        console.log("calling the spawnEnemy function properly");
+
         // spawns one of the 4 enemies and adds it to enemy group
-        let newEnemy = new BadGuy(this, game.config.width, Phaser.Math.Between(0, game.config.height), 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
+        let newEnemy = new BadGuy(this, game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
         this.enemies.add(newEnemy);
     }
 

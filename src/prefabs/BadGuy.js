@@ -13,7 +13,7 @@ class BadGuy extends Phaser.GameObjects.Sprite {
         
         // chooses one of the 4 enemy types (9 - 12)
         let enemyType = Phaser.Math.Between(9, 12);
-        this.setTexture('textureAtlas', `textureAtlasSplit${enemyType}.png`);
+        this.setTexture('textureAtlas', `textureAtlasSplit-${enemyType}.png`);
     }
 
     update(time, delta) {

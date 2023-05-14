@@ -40,8 +40,16 @@ class Play extends Phaser.Scene {
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
-        // new instance of BadGuy class
-        this.enemy = new BadGuy(this, game.config.width, 650, 'textureAtlas', 'textureAtlasSplit-9.png').setOrigin(0, 0.5);
+        // creats group for enemies
+        this.enemies = this.add.group();
+
+        // timer for spawning enemies
+        /*this.spawnTimer = this.time.addEvent({
+            delay: 5000,
+            loop: true,
+            callback: this.spawnEnemy,
+            callbackScope: this
+        });*/
 
         // adds icon in WASD fashion, again (after removing them from menu)
         this.iconW = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png').setAlpha(0.4);
@@ -57,6 +65,12 @@ class Play extends Phaser.Scene {
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     }
+
+    /*spawnEnemy() {
+        // spawns one of the 4 enemies and adds it to enemy group
+        let newEnemy = new BadGuy(this. game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
+        this.enemies.add(newEnemy);
+    }*/
 
     update(time, delta) {
         // brings player back to menu screen by pressing R

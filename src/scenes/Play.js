@@ -19,14 +19,13 @@ class Play extends Phaser.Scene {
         // starts play bgm
         this.music = this.sound.add('playBGM', {loop: true});
         this.music.play({volume: 0.35});
+        
+        // place tile sprite
+        this.background = this.add.tileSprite(0, 0, 1280, 960, 'background').setOrigin(0, 0); 
 
         // reset and credit text
         this.resetText = this.add.text(20, 20, "Press R to restart", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});
-        this.creditText = this.add.text (20, 50, "Press T for credits", {fontFamily: 'Arial', fontSize: '25px', fill: '#3d3d3d', fontStyle: 'bold'});
 
-        // place tile sprite
-        this.background = this.add.tileSprite(0, 0, 1280, 960, 'background').setOrigin(0, 0); 
-        
         // replaces static hero with running hero
         this.anims.create({
             key: 'hero_running',

@@ -5,11 +5,12 @@ class BadGuy extends Phaser.GameObjects.Sprite {
 
         scene.add.existing(this);
 
-        console.log("badguy construct being called");
-        this.debugGraphic = this.scene.add.graphics({ lineStyle: { color: 0xff0000 } });
-        this.debugGraphic.strokeRect(0, 0, this.width, this.height);
-
+        // red rectangle
+        this.debugGraphic.strokeRect(640, 480, this.width, this.height);
         
+        // draws rectangle on top of all graphics
+        //this.debugGraphic.setDepth(999);
+
         this.moveSpeed = 7;             // enemy movement speed
         this.spawnTimer = 0;            // time since last spawn
         this.spawnRate = 5000;          // rate enemy spawns

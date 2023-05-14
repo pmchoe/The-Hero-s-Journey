@@ -40,7 +40,7 @@ class Play extends Phaser.Scene {
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
-        // creats group for enemies
+        // creates group for enemies
         this.enemies = this.add.group();
 
         // adds icon in WASD fashion, again (after removing them from menu)
@@ -56,13 +56,16 @@ class Play extends Phaser.Scene {
         keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    
+        // sets interval at which enemies spawn to 1.5 secs
+        let enemyTimer = 3; 
     }
 
-    spawnEnemy() {
+    /*spawnEnemy() {
         // spawns one of the 4 enemies and adds it to enemy group
         let enemy = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
         this.enemies.add(enemy);
-    }
+    }*/
 
     update() {
         // brings player back to menu screen by pressing R
@@ -78,7 +81,18 @@ class Play extends Phaser.Scene {
         }
 
         // scrolls background at 7 frames per second 
-        this.background.tilePositionX += 7;
+        this.background.tilePositionX += 7; 
+
+        // decrements enemy spawn timer
+        enemyTimer--;
+
+        if(enemyTimer == 0) {
+            // resets enemy spawn timer
+            enemyTimer = 1500;
+
+            // spawns one of the 4 enemy textures
+            let enemy = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}`).setOrigin(0, 0.5);
+        }
         
         this.iconW.update();
         this.iconA.update();

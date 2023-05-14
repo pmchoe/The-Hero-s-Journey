@@ -12,8 +12,8 @@ top notch quality, I really enjoyed making the lil critters.
 Also, my friend told me my game is like a rhythm-less rhythm game 
 and I have to agree lol
 
-P.S. THE QUICKENING ENEMY SPAWN + SPEED TOOK SO LONG TO GET
-     I HATED CODING THAT PART AAAHGHHH
+P.S. THE QUICKENING ENEMY SPAWN + SPEED TOOK SO LONG AND
+     I COULDNT GET IT RIGHT IN THE END AGGHHHGHH
 */
 
 let config = {
@@ -30,6 +30,9 @@ let keyR, keyT, keyW, keyA, keyS, keyD;
 
 // reserve icon vars
 let iconW, iconA, iconS, iconD;
+
+// reserve time interval at which enemies spawn
+let enemyTimer;
 
 // reserve enemy move speed
 let moveSpeed;

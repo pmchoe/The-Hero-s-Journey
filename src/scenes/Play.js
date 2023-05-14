@@ -31,7 +31,7 @@ class Play extends Phaser.Scene {
         this.background = this.add.tileSprite(0, 0, 1280, 960, 'background').setOrigin(0, 0); 
 
         // displays point counter at 0
-        this.pointsText = this.add.text(1200, 20, "Points: " + points, {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(1, 0);
+        this.pointsText = this.add.text(1200, 20, "Points: " + this.points, {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(1, 0);
 
         // replaces static hero with running hero
         this.anims.create({
@@ -116,6 +116,7 @@ class Play extends Phaser.Scene {
                 
                 // update points counter
                 this.points++;
+                pointsGameOver = this.points;
                 this.pointsText.setText('Points: ' + this.points);
 
                 // make a lil hooray sound

@@ -32,7 +32,7 @@ let keyR, keyT, keyW, keyA, keyS, keyD;
 let iconW, iconA, iconS, iconD;
 
 // intitialize points to 0
-let points = 0;
+let points, pointsGameOver = 0;
 let pointText = null;
 
 // reserve lower and upper range of enemy move speed

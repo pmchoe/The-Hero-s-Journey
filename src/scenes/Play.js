@@ -58,7 +58,7 @@ class Play extends Phaser.Scene {
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     }
 
-    update() {
+    update(time, delta) {
         // brings player back to menu screen by pressing R
         if(Phaser.Input.Keyboard.JustDown(keyR)) {
             this.music.stop();

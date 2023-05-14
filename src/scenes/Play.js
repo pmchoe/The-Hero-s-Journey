@@ -35,7 +35,7 @@ class Play extends Phaser.Scene {
                 {key: 'textureAtlas', frame: 'textureAtlasSplit-3.png', origin: {x: 1, y: 0.5}},
                 {key: 'textureAtlas', frame: 'textureAtlasSplit-4.png', origin: {x: 1, y: 0.5}},
             ],
-            frameRate: 8,
+            frameRate: 6,
             repeat: -1  // loops infinitely
         });
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);

@@ -5,6 +5,7 @@ class BadGuy extends Phaser.GameObjects.Sprite {
 
         scene.add.existing(this);
 
+        console.log("badguy construct being called");
         this.debugGraphic = this.scene.add.graphics({ lineStyle: { color: 0xff0000 } });
         this.debugGraphic.strokeRect(0, 0, this.width, this.height);
 

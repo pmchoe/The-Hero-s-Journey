@@ -4,6 +4,10 @@ class BadGuy extends Phaser.GameObjects.Sprite {
         super(scene, x, y, texture, frame);
 
         scene.add.existing(this);
+
+        this.debugGraphic = this.scene.add.graphics({ lineStyle: { color: 0xff0000 } });
+        this.debugGraphic.strokeRect(0, 0, this.width, this.height);
+
         
         this.moveSpeed = 7;             // enemy movement speed
         this.spawnTimer = 0;            // time since last spawn
@@ -17,7 +21,6 @@ class BadGuy extends Phaser.GameObjects.Sprite {
     }
 
     update(time, delta) {
-        console.log("is badguy prefab update() beign called");
         // moves enemy to the left
         this.x -= this.moveSpeed;
 

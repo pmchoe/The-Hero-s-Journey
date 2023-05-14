@@ -58,7 +58,7 @@ class Play extends Phaser.Scene {
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     
         // sets interval at which enemies spawn
-        let enemyTimer = 5; 
+        let enemyTimer = 50; 
     }
 
     // depreciated code, doesnt work, hate it, glad it didnt work honestly
@@ -89,10 +89,10 @@ class Play extends Phaser.Scene {
 
         if(enemyTimer <= 0) {
             // resets enemy spawn timer
-            enemyTimer = 5;
+            enemyTimer = 50;
 
             // spawns one of the 4 enemy textures
-            this.enemy = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}`).setOrigin(0, 0.5);
+            this.enemy1 = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}`).setOrigin(0, 0.5);
         }
         
         this.iconW.update();

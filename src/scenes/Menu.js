@@ -19,14 +19,14 @@ class Menu extends Phaser.Scene {
         this.background = this.add.image(0, 0, 'background').setOrigin(0, 0); 
         
         // title text
-        this.titleText = this.add.text(640, 380, "Match the Colors", {fontFamily: 'Arial', fontSize: '74px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
+        this.titleText = this.add.text(640, 380, "The Hero's Journey", {fontFamily: 'Arial', fontSize: '74px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
 
         // bgm for menu
         this.music = this.sound.add('menuBGM', {loop: true});
         this.music.play({volume: 0.35});
 
         // instructions text
-        this.instructionsText = this.add.text(640, 480, "Press W, A, S, D", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
+        this.instructionsText = this.add.text(640, 480, "Press W, A, S, D to Match", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
         this.resetText = this.add.text (20, 20, "Press R to restart", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});
         this.creditText = this.add.text (20, 50, "Press T for credits", {fontFamily: 'Arial', fontSize: '25px', fill: '#3d3d3d', fontStyle: 'bold'});
 

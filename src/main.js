@@ -20,7 +20,7 @@ let config = {
     type: Phaser.AUTO,
     width: 1280,
     height: 960,
-    scene: [ Menu, Play, Credit ],
+    scene: [ Menu, Play, Credit, GameOver ],
 };
 
 let game = new Phaser.Game(config);
@@ -33,6 +33,7 @@ let iconW, iconA, iconS, iconD;
 
 // intitialize points to 0
 let points = 0;
+let pointText = null;
 
 // reserve lower and upper range of enemy move speed
 let moveSpeedLower, moveSpeedUpper;

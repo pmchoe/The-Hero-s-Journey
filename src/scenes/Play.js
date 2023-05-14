@@ -6,7 +6,7 @@ class Play extends Phaser.Scene {
         this.moveSpeedLower = 5;
         this.moveSpeedUpper = 15;
 
-        // sets points to 0
+        // initializes points to 0 and shares it with GameOver.js
         this.points = 0;
     }
 
@@ -30,8 +30,8 @@ class Play extends Phaser.Scene {
         // place tile sprite
         this.background = this.add.tileSprite(0, 0, 1280, 960, 'background').setOrigin(0, 0); 
 
-        // places point counter
-        this.resetText = this.add.text(1200, 20, "Points: ", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(1, 0);
+        // displays point counter at 0
+        this.pointsText = this.add.text(1200, 20, "Points: " + points, {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(1, 0);
 
         // replaces static hero with running hero
         this.anims.create({
@@ -109,10 +109,14 @@ class Play extends Phaser.Scene {
                 this.enemy = new BadGuy(this, 1280, 590, 'textureAtlas', `textureAtlasSplit-${this.enemyType}.png`).setOrigin(0, 0,5);
 
                 // send to gameOver screen
-                //this.music.stop();
-                //this.scene.start("gameOverScene");
+                this.music.stop();
+                this.scene.start("gameOverScene");
             } else if (this.iconType === this.enemyType) {
                 // good stuff for matching collision
+                
+                // update points counter
+                this.points++;
+                this.pointsText.setText('Points: ' + this.points);
 
                 // make a lil hooray sound
                 let selectSFX = this.sound.add('hooray');
@@ -126,9 +130,6 @@ class Play extends Phaser.Scene {
                 this.enemy.destroy();
                 this.enemyType = Phaser.Math.Between(9, 12);
                 this.enemy = new BadGuy(this, 1280, 590, 'textureAtlas', `textureAtlasSplit-${this.enemyType}.png`).setOrigin(0, 0,5);
-            
-                // add to points counter
-                this.points++;
             } 
         }
 

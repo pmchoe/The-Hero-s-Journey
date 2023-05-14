@@ -57,7 +57,7 @@ class Play extends Phaser.Scene {
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     
-        // sets interval at which enemies spawn to 1.5 secs
+        // sets interval at which enemies spawn
         let enemyTimer = 3; 
     }
 
@@ -85,9 +85,10 @@ class Play extends Phaser.Scene {
 
         // decrements enemy spawn timer
         enemyTimer--;
+        console.log("frame up!");
 
-        if(enemyTimer == 0) {
-            // resets enemy spawn timer
+        if(enemyTimer <= 0) {
+            // resets enemy spawn timer to 1.5 sec
             enemyTimer = 1500;
 
             // spawns one of the 4 enemy textures

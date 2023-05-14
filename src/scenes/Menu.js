@@ -37,7 +37,7 @@ class Menu extends Phaser.Scene {
         this.icon = new Icons(this, 235, 520, 'textureAtlas', 'textureAtlasSplit-8.png');
 
         // spawns static hero
-        this.player = new Hero(this, 300, 650, 'textureAtlas', 'textureAtlasSplit-0.png').setOrigin(1, 0.5);
+        this.player = new Hero(this, 300, 655, 'textureAtlas', 'textureAtlasSplit-0.png').setOrigin(1, 0.5);
 
         // define keys
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);

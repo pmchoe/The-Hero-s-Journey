@@ -5,11 +5,15 @@ class BadGuy extends Phaser.GameObjects.Sprite {
 
         scene.add.existing(this);
         
-        this.moveSpeed = 7;
-        this.spawnTimer = 0;
-        this.spawnRate = 5000;
-        this.spawnRateIncrement = 100; // how much to decrease the spawn rate by
-        this.moveSpeedIncrement = .25; // how much to increase the enemy move speed by
+        this.moveSpeed = 7;             // enemy movement speed
+        this.spawnTimer = 0;            // time since last spawn
+        this.spawnRate = 5000;          // rate enemy spawns
+        this.spawnRateIncrement = 100;  // how much to decrease the spawn rate by
+        this.moveSpeedIncrement = .25;  // how much to increase the enemy move speed by
+        
+        // chooses one of the 4 enemy types (9 - 12)
+        let enemyType = Phaser.Math.Between(9, 12);
+        this.setTexture('textureAtlas', `textureAtlasSplit${enemyType}.png`);
     }
 
     update(time, delta) {
@@ -19,13 +23,14 @@ class BadGuy extends Phaser.GameObjects.Sprite {
         // increases movement speed
         this.moveSpeed += delta / 1000;
 
-        // spawn enemy at the spawn rate interval
+        // spawns enemy at the spawn rate interval
         this.spawnTimer -= delta;
         if (this.spawnTimer <= 0) {
-            // reduce the spawn rate by the specified increment every time an enemy is spawned
+            // reduces the spawn rate by the specified increment 
+            // every time an enemy is spawned
             this.spawnRate -= this.spawnRateIncrement;
 
-            // increase the enemy move speed after every enemy spawn
+            // increases the enemy move speed after every enemy spawn
             this.moveSpeed += this.moveSpeedIncrement;
 
             // updates enemy spawn timer to spawn rate

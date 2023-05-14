@@ -40,8 +40,8 @@ class Play extends Phaser.Scene {
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
-        // enemy spawns at faster rates with faster speeds
-        //this.spawnEnemy();
+        // new instance of BadGuy class
+        this.enemy = new BadGuy(this, game.config.width, 650, 'textureAtlas', 'textureAtlasSplit-9.png').setOrigin(0, 0.5);
 
         // adds icon in WASD fashion, again (after removing them from menu)
         this.iconW = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png').setAlpha(0.4);
@@ -58,11 +58,6 @@ class Play extends Phaser.Scene {
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     }
 
-    /* spawnEnemy() {
-        let enemyType = Phaser.Math.Between(1, 4);
-        new BadGuy(this, game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${enemyType}.png`).setOrigin(0, 0.5);
-    } */
-    
     update() {
         // brings player back to menu screen by pressing R
         if(Phaser.Input.Keyboard.JustDown(keyR)) {
@@ -76,15 +71,14 @@ class Play extends Phaser.Scene {
             this.scene.start("creditScene");
         }
 
-
-        // scrolls background at 8 frames per second (i think)
+        // scrolls background at 8 frames per second 
         this.background.tilePositionX += 8;
         
         this.iconW.update();
         this.iconA.update();
         this.iconS.update();
         this.iconD.update();
-        //this.enemy.update();
+        this.enemy.update(time, delta);
         this.player.update();
       }      
 }

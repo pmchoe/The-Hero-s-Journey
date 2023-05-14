@@ -91,7 +91,7 @@ class Play extends Phaser.Scene {
             enemyTimer = 1500;
 
             // spawns one of the 4 enemy textures
-            let enemy = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}`).setOrigin(0, 0.5);
+            this.enemy = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}`).setOrigin(0, 0.5);
         }
         
         this.iconW.update();

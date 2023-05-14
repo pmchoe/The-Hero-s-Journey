@@ -40,9 +40,6 @@ class Play extends Phaser.Scene {
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
-        // creates group for enemies
-        this.enemies = this.add.group();
-
         // adds icon in WASD fashion, again (after removing them from menu)
         this.iconW = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png').setAlpha(0.4);
         this.iconA = new Icons(this, 135, 525, 'textureAtlas', 'textureAtlasSplit-6.png').setAlpha(0.4);
@@ -101,7 +98,7 @@ class Play extends Phaser.Scene {
         this.iconS.update();
         this.iconD.update();
         this.player.update();
-        this.enemies.update();
+        this.enemy.update();
         
         // USELESS, DOESNT WORK, COULDNT MAKE IT WORK, WONT MAKE IT WORK
         // I GIVE UP

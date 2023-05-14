@@ -1,7 +1,6 @@
 class Play extends Phaser.Scene {
     constructor() {
         super("playScene");
-        this.config = config;
     }
 
     preload() {
@@ -41,6 +40,8 @@ class Play extends Phaser.Scene {
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
+        this.enemyTest = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}`).setOrigin(0, 0.5);
+
         // creats group for enemies
         this.enemies = this.add.group();
 
@@ -69,7 +70,7 @@ class Play extends Phaser.Scene {
 
     spawnEnemy() {
         // spawns one of the 4 enemies and adds it to enemy group
-        let enemy = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`, this.game.config).setOrigin(0, 0.5);
+        let enemy = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
         this.enemies.add(enemy);
     }
 

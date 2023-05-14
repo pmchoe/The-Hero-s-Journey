@@ -95,6 +95,6 @@ class Play extends Phaser.Scene {
         this.player.update();
         
         // updates entire enemy group
-        this.enemies.children.iterate((enemy) => enemy.update(time, delta)); 
+        this.enemies.children.iterate((enemy) => enemy.update()); 
       }      
 }

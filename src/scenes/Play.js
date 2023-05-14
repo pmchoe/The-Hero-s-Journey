@@ -40,6 +40,9 @@ class Play extends Phaser.Scene {
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
+                // delete later? testing enemy spawns
+                this.enemy = new BadGuy(this, game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(5, 8)}.png`).setOrigin(0, 0.5);
+
         // creats group for enemies
         this.enemies = this.add.group();
 
@@ -64,9 +67,6 @@ class Play extends Phaser.Scene {
         keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-    
-        // delete later? testing enemy spawns
-        this.enemy = new BadGuy(this, game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(5, 8)}.png`).setOrigin(0, 0.5);
     }
 
     /*spawnEnemy() {

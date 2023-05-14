@@ -68,6 +68,7 @@ class Play extends Phaser.Scene {
     }*/
 
     update() {
+        console.log("start of update");
         // brings player back to menu screen by pressing R
         if(Phaser.Input.Keyboard.JustDown(keyR)) {
             this.music.stop();

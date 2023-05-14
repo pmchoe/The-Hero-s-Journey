@@ -31,8 +31,11 @@ let keyR, keyT, keyW, keyA, keyS, keyD;
 // reserve icon vars
 let iconW, iconA, iconS, iconD;
 
-// reserve time interval at which enemies spawn
-let enemyTimer;
+// intitialize points to 0
+let points = 0;
 
 // reserve lower and upper range of enemy move speed
 let moveSpeedLower, moveSpeedUpper;
+
+// reserve typing of icons and enemies
+let iconType, enemyType;

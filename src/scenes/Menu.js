@@ -27,8 +27,8 @@ class Menu extends Phaser.Scene {
 
         // instructions text
         this.instructionsText = this.add.text(640, 480, "Press W, A, S, D to Match", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
-        this.resetText = this.add.text (20, 20, "Press R to restart", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});
-        this.creditText = this.add.text (20, 50, "Press T for credits", {fontFamily: 'Arial', fontSize: '25px', fill: '#3d3d3d', fontStyle: 'bold'});
+        //this.resetText = this.add.text (20, 20, "Press R to restart", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});
+        this.creditText = this.add.text (20, 20, "Press T for credits", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});
 
         // adds icon in WASD fashion
         this.icon = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png');

@@ -40,18 +40,8 @@ class Play extends Phaser.Scene {
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
-        this.enemyTest = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
-
         // creats group for enemies
         this.enemies = this.add.group();
-
-        // timer for spawning enemies
-        this.spawnTimer = this.time.addEvent({
-            delay: 1000,
-            loop: true,
-            callback: this.spawnEnemy,
-            callbackScope: this
-        });
 
         // adds icon in WASD fashion, again (after removing them from menu)
         this.iconW = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png').setAlpha(0.4);
@@ -87,17 +77,20 @@ class Play extends Phaser.Scene {
             this.scene.start("creditScene");
         }
 
-        // scrolls background at 8 frames per second 
-        this.background.tilePositionX += 8;
+        // scrolls background at 7 frames per second 
+        this.background.tilePositionX += 7;
         
         this.iconW.update();
         this.iconA.update();
         this.iconS.update();
         this.iconD.update();
         this.player.update();
+        this.enemies.update();
         
+        // USELESS, DOESNT WORK, COULDNT MAKE IT WORK, WONT MAKE IT WORK
+        // I GIVE UP
         // updates entire enemy group
-        this.enemies.children.iterate((enemy) => {
+        /*this.enemies.children.iterate((enemy) => {
             enemy.x -= enemy.moveSpeed;
 
             // increases movement speed
@@ -125,6 +118,6 @@ class Play extends Phaser.Scene {
             if (enemy.x < -enemy.width) {
                 enemy.destroy();
             }
-        });
+        });*/
     }      
 }

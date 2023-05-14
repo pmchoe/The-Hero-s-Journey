@@ -13,7 +13,7 @@ class Icons extends Phaser.GameObjects.Sprite {
     update() {
         // get reference to the scene
         let scene = this.scene;
-        
+
         // When W key is pressed, iconW is "highlighted" while
         // the others are transparent when not selected
         if(Phaser.Input.Keyboard.JustDown(keyW)) {
@@ -23,7 +23,7 @@ class Icons extends Phaser.GameObjects.Sprite {
             this.scene.iconD.setAlpha(0.4);
 
             // make a lil sound
-            let selectSFX = this.sound.add('select');
+            let selectSFX = scene.sound.add('select');
             selectSFX.play({volume: 0.5});
         } else if(Phaser.Input.Keyboard.JustDown(keyA)) {
             this.scene.iconW.setAlpha(0.4);
@@ -32,7 +32,7 @@ class Icons extends Phaser.GameObjects.Sprite {
             this.scene.iconD.setAlpha(0.4);
 
             // make a lil sound
-            let selectSFX = this.sound.add('select');
+            let selectSFX = scene.sound.add('select');
             selectSFX.play({volume: 0.5});
         } else if(Phaser.Input.Keyboard.JustDown(keyS)) {
             this.scene.iconW.setAlpha(0.4);
@@ -41,7 +41,7 @@ class Icons extends Phaser.GameObjects.Sprite {
             this.scene.iconD.setAlpha(0.4);
 
             // make a lil sound
-            let selectSFX = this.sound.add('select');
+            let selectSFX = scene.sound.add('select');
             selectSFX.play({volume: 0.5});
         } else if(Phaser.Input.Keyboard.JustDown(keyD)) {
             this.scene.iconW.setAlpha(0.4);
@@ -50,7 +50,7 @@ class Icons extends Phaser.GameObjects.Sprite {
             this.scene.iconD.setAlpha(1);
             
             // make a lil sound
-            let selectSFX = this.sound.add('select');
+            let selectSFX = scene.sound.add('select');
             selectSFX.play({volume: 0.5});
         }
     }    

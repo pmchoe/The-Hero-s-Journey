@@ -40,19 +40,16 @@ class Play extends Phaser.Scene {
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
-                // delete later? testing enemy spawns
-                this.enemy = new BadGuy(this, game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(5, 8)}.png`).setOrigin(0, 0.5);
-
         // creats group for enemies
         this.enemies = this.add.group();
 
         // timer for spawning enemies
-        /*this.spawnTimer = this.time.addEvent({
+        this.spawnTimer = this.time.addEvent({
             delay: 5000,
             loop: true,
             callback: this.spawnEnemy,
             callbackScope: this
-        });*/
+        });
 
         // adds icon in WASD fashion, again (after removing them from menu)
         this.iconW = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png').setAlpha(0.4);
@@ -69,11 +66,11 @@ class Play extends Phaser.Scene {
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     }
 
-    /*spawnEnemy() {
+    spawnEnemy() {
         // spawns one of the 4 enemies and adds it to enemy group
         let newEnemy = new BadGuy(this. game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
         this.enemies.add(newEnemy);
-    }*/
+    }
 
     update() {
         // brings player back to menu screen by pressing R
@@ -95,7 +92,9 @@ class Play extends Phaser.Scene {
         this.iconA.update();
         this.iconS.update();
         this.iconD.update();
-        this.enemy.update();
         this.player.update();
+        
+        // updates entire enemy group
+        this.enemies.children.iterate((enemy) => enemy.update(time, delta)); 
       }      
 }

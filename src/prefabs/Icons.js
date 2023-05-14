@@ -11,6 +11,9 @@ class Icons extends Phaser.GameObjects.Sprite {
     }
 
     update() {
+        // get reference to the scene
+        let scene = this.scene;
+        
         // When W key is pressed, iconW is "highlighted" while
         // the others are transparent when not selected
         if(Phaser.Input.Keyboard.JustDown(keyW)) {

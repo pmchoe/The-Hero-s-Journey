@@ -64,6 +64,9 @@ class Play extends Phaser.Scene {
         keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    
+        // delete later? testing enemy spawns
+        this.enemy = new BadGuy(this, game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(5, 8)}.png`).setOrigin(0, 0.5);
     }
 
     /*spawnEnemy() {
@@ -72,7 +75,7 @@ class Play extends Phaser.Scene {
         this.enemies.add(newEnemy);
     }*/
 
-    update(time, delta) {
+    update() {
         // brings player back to menu screen by pressing R
         if(Phaser.Input.Keyboard.JustDown(keyR)) {
             this.music.stop();
@@ -92,7 +95,7 @@ class Play extends Phaser.Scene {
         this.iconA.update();
         this.iconS.update();
         this.iconD.update();
-        this.enemy.update(time, delta);
+        this.enemy.update();
         this.player.update();
       }      
 }

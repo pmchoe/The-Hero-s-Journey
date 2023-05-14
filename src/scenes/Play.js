@@ -31,14 +31,14 @@ class Play extends Phaser.Scene {
         this.anims.create({
             key: 'hero_running',
             frames: [
-              { key: 'textureAtlas', frame: 'textureAtlasSplit-2.png', frameWidth: 64, frameHeight: 64, },
-              { key: 'textureAtlas', frame: 'textureAtlasSplit-3.png', frameWidth: 64, frameHeight: 64, },
-              { key: 'textureAtlas', frame: 'textureAtlasSplit-4.png', frameWidth: 64, frameHeight: 64, },
+                {key: 'textureAtlas', frame: 'textureAtlasSplit-2.png', origin: {x: 1, y: 0.5}},
+                {key: 'textureAtlas', frame: 'textureAtlasSplit-3.png', origin: {x: 1, y: 0.5}},
+                {key: 'textureAtlas', frame: 'textureAtlasSplit-4.png', origin: {x: 1, y: 0.5}},
             ],
-            frameRate: 10,
-            repeat: -1
-          });          
-        this.player = new Hero(this, 300, 650, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
+            frameRate: 8,
+            repeat: -1  // loops infinitely
+        });
+        this.player = new Hero(this, 100, 850, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
         // enemy spawns at faster rates with faster speeds

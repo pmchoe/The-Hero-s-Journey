@@ -58,12 +58,10 @@ class Play extends Phaser.Scene {
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     }
 
-    /*
-    spawnEnemy() {
+    /* spawnEnemy() {
         let enemyType = Phaser.Math.Between(1, 4);
         new BadGuy(this, game.config.width, 650, 'textureAtlas', `textureAtlasSplit-${enemyType}.png`).setOrigin(0, 0.5);
-    }
-    */
+    } */
     
     update() {
         // brings player back to menu screen by pressing R

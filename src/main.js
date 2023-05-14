@@ -1,8 +1,9 @@
-// Philip Choe, The Hero's Journey
-
-// Approximate hours spent on this project: so far? about 24 hours 5:30pm 5/13 
-
 /*
+Philip Choe, The Hero's Journey
+
+Approximate hours spent: so far? about 24ish hours 5:30pm 5/13 
+
+
 I wanted to make a game with enemies that spawn faster and
 with more movement speed, so I chose this type of gameplay.
 The music is ripped off of royalty free sites, but I'm surprisingly

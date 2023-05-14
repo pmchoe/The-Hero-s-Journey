@@ -21,7 +21,7 @@ class Play extends Phaser.Scene {
         this.music.play({volume: 0.35});
 
         // reset and credit text
-        this.resetText = this.add.text (20, 20, "Press R to restart", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});
+        this.resetText = this.add.text(20, 20, "Press R to restart", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});
         this.creditText = this.add.text (20, 50, "Press T for credits", {fontFamily: 'Arial', fontSize: '25px', fill: '#3d3d3d', fontStyle: 'bold'});
 
         // place tile sprite
@@ -31,9 +31,9 @@ class Play extends Phaser.Scene {
         this.anims.create({
             key: 'hero_running',
             frames: [
-                {key: 'textureAtlas', frame: 'textureAtlasSplit-2.png'},
-                {key: 'textureAtlas', frame: 'textureAtlasSplit-3.png'},
-                {key: 'textureAtlas', frame: 'textureAtlasSplit-4.png'},
+                {key: 'textureAtlas', frame: 'textureAtlasSplit-2.png', origin: {x: 1, y: 0.5}},
+                {key: 'textureAtlas', frame: 'textureAtlasSplit-3.png', origin: {x: 1, y: 0.5}},
+                {key: 'textureAtlas', frame: 'textureAtlasSplit-4.png', origin: {x: 1, y: 0.5}},
             ],
             frameRate: 10,
             repeat: -1  // loops infinitely

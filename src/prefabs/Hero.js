@@ -15,14 +15,6 @@ class Hero extends Phaser.GameObjects.Sprite {
             put png image textureAtlasSplit-0
             flip it 270 degrees
         }
-
-        // starts running animation after W, A, S, D is pressed
-        if((Phaser.Input.Keyboard.JustDown(keyW) || Phaser.Input.Keyboard.JustDown(keyA) ||
-        Phaser.Input.Keyboard.JustDown(keyS) || Phaser.Input.Keyboard.JustDown(keyD))
-        && this.scene.Menu == true) {
-            remove this.HeroIdle
-            start this.HeroRunning
-        }
         */
     }
 }

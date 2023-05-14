@@ -16,7 +16,7 @@ class BadGuy extends Phaser.GameObjects.Sprite {
         let enemyType = Phaser.Math.Between(9, 12);
         this.setTexture('textureAtlas', `textureAtlasSplit-${enemyType}.png`);
     
-        this.x = this.game.config.width;
+        this.x = 1280;
     }
 
     update(time, delta) {

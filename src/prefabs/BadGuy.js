@@ -17,6 +17,7 @@ class BadGuy extends Phaser.GameObjects.Sprite {
     }
 
     update(time, delta) {
+        console.log("is badguy prefab update() beign called");
         // moves enemy to the left
         this.x -= this.moveSpeed;
 

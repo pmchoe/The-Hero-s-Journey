@@ -34,5 +34,5 @@ let iconW, iconA, iconS, iconD;
 // reserve time interval at which enemies spawn
 let enemyTimer;
 
-// reserve enemy move speed
-let moveSpeed;
+// reserve lower and upper range of enemy move speed
+let moveSpeedLower, moveSpeedUpper;

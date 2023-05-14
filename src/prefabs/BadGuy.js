@@ -6,9 +6,8 @@ class BadGuy extends Phaser.GameObjects.Sprite {
         scene.add.existing(this);
     }
 
-    update(time, delta) {
+    update(moveSpeedLower, moveSpeedUpper) {
         // moves enemy to the left
-        // matches background speed
-        this.x -= 8;
+        this.x -= Phaser.Math.Between(moveSpeedLower, moveSpeedUpper);
     }
 }

@@ -1,6 +1,13 @@
 class Play extends Phaser.Scene {
     constructor() {
         super("playScene");
+
+        // sets interval at which enemies spawn
+        this.enemyTimer = 0; 
+
+        // sets enemy move speed range 5-15
+        this.moveSpeedLower = 5;
+        this.moveSpeedUpper = 15;
     }
 
     preload() {
@@ -40,8 +47,9 @@ class Play extends Phaser.Scene {
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
 
-        // creates first enemy (so that code works)
-        this.enemy = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0,5);
+        // creates enemies (so that code works)
+        // and hides enemies 2-4 behind the background
+        this.enemy = new BadGuy(this, 1280, 590, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
 
         // adds icon in WASD fashion, again (after removing them from menu)
         this.iconW = new Icons(this, 185, 470, 'textureAtlas', 'textureAtlasSplit-5.png').setAlpha(0.4);
@@ -56,9 +64,6 @@ class Play extends Phaser.Scene {
         keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-    
-        // sets interval at which enemies spawn
-        let enemyTimer = 50; 
     }
 
     // depreciated code, doesnt work, hate it, glad it didnt work honestly
@@ -69,9 +74,6 @@ class Play extends Phaser.Scene {
     }*/
 
     update() {
-        // decrements enemy spawn timer
-        enemyTimer--;
-
         // brings player back to menu screen by pressing R
         if(Phaser.Input.Keyboard.JustDown(keyR)) {
             this.music.stop();
@@ -87,12 +89,15 @@ class Play extends Phaser.Scene {
         // scrolls background at 7 frames per second 
         this.background.tilePositionX += 7; 
 
-        if(enemyTimer <= 0) {
-            // resets enemy spawn timer
-            enemyTimer = 50;
-
-            // spawns one of the 4 enemy textures
-            this.enemy1 = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}`).setOrigin(0, 0.5);
+        // destroys enemies as they reach hero
+        if(this.enemy.getBounds().left < 210) {
+            // removes enemy's sprite from screen
+            this.enemy.destroy();
+            // increases enemy movement speed
+            this.moveSpeedLower++;
+            this.moveSpeedUpper++;
+            // respawns enemy when time hits 0
+            this.enemy = new BadGuy(this, 1280, 590, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0,5);
         }
         
         this.iconW.update();
@@ -100,7 +105,11 @@ class Play extends Phaser.Scene {
         this.iconS.update();
         this.iconD.update();
         this.player.update();
-        this.enemy.update();
+        // updates enemy
+        if(this.enemy.getBounds().left >= 210) {
+            this.enemy.update(this.moveSpeedLower, this.moveSpeedUpper);
+        }
+        
         
         // USELESS, DOESNT WORK, COULDNT MAKE IT WORK, WONT MAKE IT WORK
         // I GIVE UP

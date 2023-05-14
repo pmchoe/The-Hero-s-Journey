@@ -6,7 +6,7 @@ class BadGuy extends Phaser.GameObjects.Sprite {
         scene.add.existing(this);
 
         // red rectangle
-        this.debugGraphic.strokeRect(640, 480, this.width, this.height);
+        this.debugGraphic.strokeRect(50, 50, this.width, this.height);
         
         // draws rectangle on top of all graphics
         //this.debugGraphic.setDepth(999);

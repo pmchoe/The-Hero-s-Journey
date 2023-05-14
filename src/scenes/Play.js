@@ -26,9 +26,8 @@ class Play extends Phaser.Scene {
         // reset and credit text
         this.resetText = this.add.text(20, 20, "Press R to restart", {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'});
 
-        this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         // replaces static hero with running hero
-        /*this.anims.create({
+        this.anims.create({
             key: 'hero_running',
             frames: [
                 {key: 'textureAtlas', frame: 'textureAtlasSplit-2.png', origin: {x: 1, y: 0.5}},
@@ -40,7 +39,6 @@ class Play extends Phaser.Scene {
         });
         this.player = new Hero(this, 180, 745, 'textureAtlas', 'textureAtlasSplit-1.png').setOrigin(1, 0.5);
         this.player.anims.play('hero_running', true).setOrigin(1, 0.5);   // animates hero running
-*/
 
         this.enemyTest = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
 
@@ -99,6 +97,34 @@ class Play extends Phaser.Scene {
         this.player.update();
         
         // updates entire enemy group
-        this.enemies.children.iterate((enemy) => enemy.update()); 
-      }      
+        this.enemies.children.iterate((enemy) => {
+            enemy.x -= enemy.moveSpeed;
+
+            // increases movement speed
+            enemy.moveSpeed += this.time.deltaTime / 1000;
+
+            // spawns enemy at the spawn rate interval
+            enemy.spawnTimer -= this.time.deltaTime;
+            if (enemy.spawnTimer <= 0) {
+                // reduces the spawn rate by the specified increment 
+                // every time an enemy is spawned
+                enemy.spawnRate -= enemy.spawnRateIncrement;
+
+                // increases the enemy move speed after every enemy spawn
+                enemy.moveSpeed += enemy.moveSpeedIncrement;
+
+                // updates enemy spawn timer to spawn rate
+                enemy.spawnTimer = enemy.spawnRate;
+
+                // spawns another enemy
+                let newEnemy = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
+                this.enemies.add(newEnemy);
+            }
+
+            // destroys enemy if it goes off the screen
+            if (enemy.x < -enemy.width) {
+                enemy.destroy();
+            }
+        });
+    }      
 }

@@ -28,15 +28,21 @@ class BadGuy extends Phaser.GameObjects.Sprite {
         // spawns enemy at the spawn rate interval
         this.spawnTimer -= delta;
         if (this.spawnTimer <= 0) {
-            // reduces the spawn rate by the specified increment 
+            // reduces the spawn rate by the specified decrement
             // every time an enemy is spawned
-            this.spawnRate -= this.spawnRateIncrement;
-
+            this.spawnRate -= this.spawnRateDecrement;
             // increases the enemy move speed after every enemy spawn
             this.moveSpeed += this.moveSpeedIncrement;
-
             // updates enemy spawn timer to spawn rate
             this.spawnTimer = this.spawnRate;
+            // spawn another enemy
+            this.spawnEnemy();
         }
+    }
+
+    spawnEnemy() {
+        // spawns one of the 4 enemies and adds it to enemy group
+        let enemy = new BadGuy(this, 1280, 650, 'textureAtlas', `textureAtlasSplit-${Phaser.Math.Between(9, 12)}.png`).setOrigin(0, 0.5);
+        this.enemies.add(enemy);
     }
 }

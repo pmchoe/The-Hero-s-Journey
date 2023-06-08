@@ -23,7 +23,10 @@ class GameOver extends Phaser.Scene {
 
         // displays points counter from Play.js
         this.pointsText = this.add.text(640, 500, "Points: " + pointsGameOver, {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
-
+        // resets points to 0 after appending it to pointsText
+        this.pointsGameOver = 0;
+        this.points = 0;
+        
         // bgm for gameover (same as menu)
         this.music = this.sound.add('menuBGM', {loop: true});
         this.music.play({volume: 0.35});
@@ -40,9 +43,6 @@ class GameOver extends Phaser.Scene {
     update() {
         // brings player to credit screen by pressing T
         if(Phaser.Input.Keyboard.JustDown(keyT)) {
-            // resets points to 0
-            this.pointsGameOver = 0;
-            this.points = 0;
             // destroys objects and switches to credit scene
             this.gameOverText.destroy();
             this.resetText.destroy();
@@ -54,9 +54,6 @@ class GameOver extends Phaser.Scene {
 
         // restarts game by pressing R
         if(Phaser.Input.Keyboard.JustDown(keyR)) {
-            // resets points to 0
-            this.pointsGameOver = 0;
-            this.points = 0;
             // destroys objects and switches to game scene
             this.gameOverText.destroy();
             this.resetText.destroy();

@@ -22,7 +22,7 @@ class GameOver extends Phaser.Scene {
         this.gameOverText = this.add.text(640, 360, "You Tried", {fontFamily: 'Arial', fontSize: '74px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
 
         // displays points counter from Play.js
-        this.pointsText = this.add.text(640, 500, "Highscore: " + pointsGameOver, {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
+        this.pointsText = this.add.text(640, 500, "Points: " + pointsGameOver, {fontFamily: 'Arial', fontSize: '32px', fill: '#3d3d3d', fontStyle: 'bold'}).setOrigin(0.5);
         // resets points to 0 after appending it to pointsText
         this.pointsGameOver = 0;
         this.points = 0;

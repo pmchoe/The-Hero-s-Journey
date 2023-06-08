@@ -23,6 +23,9 @@ class Play extends Phaser.Scene {
     }
 
     create() { 
+        // sets points to 0, unsure if needed
+        this.points = 0;
+        
         // starts play bgm
         this.music = this.sound.add('playBGM', {loop: true});
         this.music.play({volume: 0.35});

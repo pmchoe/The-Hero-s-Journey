@@ -40,6 +40,8 @@ class GameOver extends Phaser.Scene {
     update() {
         // brings player to credit screen by pressing T
         if(Phaser.Input.Keyboard.JustDown(keyT)) {
+            // resets points to 0
+            pointsGameOver = 0;
             // destroys objects and switches to credit scene
             this.gameOverText.destroy();
             this.resetText.destroy();
@@ -51,6 +53,8 @@ class GameOver extends Phaser.Scene {
 
         // restarts game by pressing R
         if(Phaser.Input.Keyboard.JustDown(keyR)) {
+            // resets points to 0
+            pointsGameOver = 0;
             // destroys objects and switches to game scene
             this.gameOverText.destroy();
             this.resetText.destroy();
